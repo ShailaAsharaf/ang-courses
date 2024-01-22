@@ -9,6 +9,12 @@ import { CourseDetailsComponent } from './components/course-details/course-detai
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { LoaderComponent } from './components/loader/loader.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +24,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CourseDetailsComponent,
     WishlistComponent,
     ProfileComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

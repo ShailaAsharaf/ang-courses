@@ -1,0 +1,13 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.image {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+}
+.navIcons{
+  cursor: pointer;
+  margin-right: 16px;
+}
