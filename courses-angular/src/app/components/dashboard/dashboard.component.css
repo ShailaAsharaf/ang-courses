@@ -13,3 +13,12 @@
     font-size: 40px;
   }
 }
+.customMarginTitle{
+  margin: 32px 0 12px 0
+}
+.customMarginLine{
+  margin: 0 0 28px 0
+}
+.mat-column-actions{
+  flex: 0 0 10%;
+}

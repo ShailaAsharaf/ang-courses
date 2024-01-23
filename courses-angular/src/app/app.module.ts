@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoginComponent } from './components/login/login.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatListModule,
     MatTableModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
