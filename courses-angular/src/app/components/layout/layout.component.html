@@ -11,7 +11,7 @@
     </span>
     <span class="navIcons" (click)="goToPage('cartDetails')">
     <button mat-icon-button title="Cart Details">
-      <mat-icon>shopping_cart</mat-icon>
+      <mat-icon [matBadgeHidden] = "dataService.cartItems.length == 0" [matBadge]="dataService.cartItems.length" matBadgeColor="warn">shopping_cart</mat-icon>
     </button>
     </span>
     <span class="navIcons" (click)="goToPage('profilePage')">

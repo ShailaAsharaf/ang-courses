@@ -24,6 +24,7 @@ import {MatRippleModule} from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatRippleModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

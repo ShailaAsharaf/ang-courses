@@ -10,7 +10,7 @@ import { DataServiceService } from '../data-service.service';
 export class LayoutComponent implements OnInit {
   constructor(
     private router: Router,
-    private dataService: DataServiceService
+    public dataService: DataServiceService
     ) {}
 
   ngOnInit(): void {}
