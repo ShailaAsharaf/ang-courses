@@ -1,10 +1,15 @@
-<mat-toolbar>
-  <img class="image" src="assets/professional logo.jpg" (click)="goToPage('')">
-  <span class="navIcons" (click)="goToPage('')">My App</span>
-  <span class="example-spacer"></span>
-  <span class="navIcons" (click)="goToPage('courses')">Courses</span>
-  <span class="navIcons" (click)="goToPage('wishList')">My Wish List</span>
-  <span class="navIcons" (click)="goToPage('cartDetails')">Cart Details</span>
-  <span class="navIcons" (click)="goToPage('profilePage')">My Profile Page</span>
-</mat-toolbar>
-<router-outlet></router-outlet>
+<div class="no-v-scroll">
+  <mat-toolbar>
+    <img class="image" src="assets/professional logo.jpg" (click)="goToPage('')">
+    <span class="navIcons" (click)="goToPage('')">My App</span>
+    <span class="example-spacer"></span>
+    <span class="navIcons" (click)="goToPage('courses')">Courses</span>
+    <span class="navIcons" (click)="goToPage('wishList')">My Wish List</span>
+    <span class="navIcons" (click)="goToPage('cartDetails')">Cart Details</span>
+    <span class="navIcons" (click)="goToPage('profilePage')">My Profile Page</span>
+  </mat-toolbar>
+  <div class="ovrflow">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
