@@ -31,6 +31,20 @@
 .mat-column-discountPercentage{
   flex: 0 0 20%;
 }
+.coursesTitle{
+  color: blue;
+  font-size: 16px;
+}
+.mat-column-star{
+  flex: 0 0 6%
+}
 .fullWidth{
   width: 100%;
+}
+h1{
+  margin-bottom: 0;
+}
+.star{
+  color: yellow;
+  margin-top: 16px;
 }

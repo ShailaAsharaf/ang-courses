@@ -1,12 +1,24 @@
 <div class="no-v-scroll">
-  <mat-toolbar>
+  <mat-toolbar class="whitebg">
     <img class="image" src="assets/professional logo.jpg" (click)="goToPage('')">
     <span class="navIcons" (click)="goToPage('')">My App</span>
     <span class="example-spacer"></span>
     <span class="navIcons" (click)="goToPage('courses')">Courses</span>
-    <span class="navIcons" (click)="goToPage('wishList')">My Wish List</span>
-    <span class="navIcons" (click)="goToPage('cartDetails')">Cart Details</span>
-    <span class="navIcons" (click)="goToPage('profilePage')">My Profile Page</span>
+    <span class="navIcons" (click)="goToPage('wishList')">
+      <button mat-icon-button title="My Wishlist">
+        <mat-icon>lists</mat-icon>
+      </button>
+    </span>
+    <span class="navIcons" (click)="goToPage('cartDetails')">
+    <button mat-icon-button title="Cart Details">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    </span>
+    <span class="navIcons" (click)="goToPage('profilePage')">
+      <button mat-icon-button title="My Profile Page">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </span>
   </mat-toolbar>
   <div class="ovrflow">
     <router-outlet></router-outlet>

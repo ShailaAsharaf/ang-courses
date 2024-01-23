@@ -1,1 +1,6 @@
-<p>popup works!</p>
+<mat-dialog-content *ngIf="data.mode ==='addedToCart' ">
+  Course successfully added in the Cart
+</mat-dialog-content>
+<mat-dialog-actions align="end" *ngIf="data.mode ==='addedToCart' ">
+  <button mat-button (click)="close()">Close</button>
+</mat-dialog-actions>

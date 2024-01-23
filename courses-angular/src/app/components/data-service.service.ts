@@ -5,10 +5,9 @@ import { courses } from '../data-model';
   providedIn: 'root'
 })
 export class DataServiceService {
-  private data = courses.ConstValue;
+  cartItems: courses[] = [];
+  wishItems: courses[] = [];
 
   constructor() { }
-  getData() {
-    return this.data;
-  }
+
 }

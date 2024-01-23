@@ -3,6 +3,8 @@ import { courses } from 'src/app/data-model';
 import { DataServiceService } from '../data-service.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,20 +17,44 @@ export class DashboardComponent implements OnInit {
 
   angularCourses = new MatTableDataSource<courses>(courses.ConstValue);
   displayedColumns: string[] = [
+    'star',
     'courseName',
     'actualPrice',
     'discountPercentage',
     'actions',
   ];
 
-  constructor(private dataServices: DataServiceService) {}
+  constructor(
+    private dataServices: DataServiceService,
+    private dialog: MatDialog
+    ) {}
 
   ngOnInit(): void {}
   ngAfterViewInit() {
     this.angularCourses.paginator = this.paginator;
   }
-  addToWishList() {}
-  addToCart() {}
+  addToWishList(item: courses) {
+    const daialogRef = this.dialog.open(PopupComponent, {
+      width: '300px',
+      data: {
+        mode: 'addedToWishList',
+      },
+    });
+    daialogRef.afterClosed().subscribe(resp=>{
+      this.dataServices.wishItems.push(item);
+    })
+  }
+  addToCart(item: courses) {
+    const daialogRef = this.dialog.open(PopupComponent, {
+      width: '300px',
+      data: {
+        mode: 'addedToCart',
+      },
+    });
+    daialogRef.afterClosed().subscribe(resp=>{
+      this.dataServices.cartItems.push(item)
+    })
+  }
   getPrice(price: string, discount: string) {
     let finalPrice = price.substring(1);
     let finalDis = discount.substring(0, discount.length - 1);
@@ -41,5 +67,9 @@ export class DashboardComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.angularCourses.filter = filterValue.trim().toLowerCase();
+  }
+  checkElement(element: courses){
+    if (this.dataServices.wishItems.indexOf(element) !== -1){ return true;}
+    else{ return false; }
   }
 }

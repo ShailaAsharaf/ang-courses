@@ -135,3 +135,6 @@ export class courses {
     },
   ];
 }
+export interface dialogData {
+  mode: string
+}
