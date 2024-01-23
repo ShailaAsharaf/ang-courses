@@ -13,8 +13,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoginComponent } from './components/login/login.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,7 @@ import { LoginComponent } from './components/login/login.component';
     ProfileComponent,
     DashboardComponent,
     LoaderComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,12 @@ import { LoginComponent } from './components/login/login.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatListModule,
+    MatTableModule,
+    MatInputModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
