@@ -16,7 +16,7 @@
 .customMarginTitle{
   margin: 32px 0 12px 0
 }
-.customMarginLine{
+.customMarginLine2{
   margin: 0 0 16px 0
 }
 .customMarginButtons{
@@ -30,4 +30,7 @@
 }
 .mat-column-discountPercentage{
   flex: 0 0 20%;
+}
+.fullWidth{
+  width: 100%;
 }

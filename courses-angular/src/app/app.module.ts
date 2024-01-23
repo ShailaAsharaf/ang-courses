@@ -21,6 +21,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { LoginComponent } from './components/login/login.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatRippleModule} from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import {MatRippleModule} from '@angular/material/core';
     MatTableModule,
     MatInputModule,
     MatPaginatorModule,
-    MatRippleModule
+    MatRippleModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

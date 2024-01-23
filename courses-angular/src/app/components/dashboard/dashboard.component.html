@@ -3,13 +3,22 @@
     <span>Discover Latest Courses on Angular</span>
   </div>
   <div class="container">
+    <br>
+    <br>
+
+    <mat-form-field class="fullWidth" appearance="outline">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search by Course title, author or tags" #input>
+    </mat-form-field>
+
     <mat-table [dataSource]="angularCourses">
       <ng-container matColumnDef="courseName">
         <mat-header-cell mat-header-cell *matHeaderCellDef> Courses </mat-header-cell>
         <mat-cell mat-cell *matCellDef="let element">
           <div class="d-flex flex-column">
             <h2 class="customMarginTitle">{{element.courseName}}</h2>
-            <div class="customMarginLine">{{element.author}}</div>
+            <div class="customMarginLine1">Author: {{element.author}}</div>
+            <div class="customMarginLine2">{{element.tags}}</div>
             <div class="customMarginButtons">
               <a [routerLink]="" (click)="addToWishList()">Add to WishList</a>
               &nbsp;
