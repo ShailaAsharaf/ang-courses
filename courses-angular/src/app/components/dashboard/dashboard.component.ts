@@ -45,15 +45,19 @@ export class DashboardComponent implements OnInit {
     })
   }
   addToCart(item: courses) {
-    const daialogRef = this.dialog.open(PopupComponent, {
-      width: '300px',
-      data: {
-        mode: 'addedToCart',
-      },
-    });
-    daialogRef.afterClosed().subscribe(resp=>{
-      this.dataServices.cartItems.push(item)
-    })
+    if (this.dataServices.cartItems.indexOf(item) !== -1){
+      alert('Already exists in the Cart')
+    } else{
+      const daialogRef = this.dialog.open(PopupComponent, {
+        width: '300px',
+        data: {
+          mode: 'addedToCart',
+        },
+      });
+      daialogRef.afterClosed().subscribe(resp=>{
+        this.dataServices.cartItems.push(item)
+      })
+    }
   }
   getPrice(price: string, discount: string) {
     let finalPrice = price.substring(1);
