@@ -17,8 +17,17 @@
   margin: 32px 0 12px 0
 }
 .customMarginLine{
-  margin: 0 0 28px 0
+  margin: 0 0 16px 0
+}
+.customMarginButtons{
+  margin: 0 0 12px 0;
 }
 .mat-column-actions{
   flex: 0 0 10%;
+}
+.mat-column-actualPrice{
+  flex: 0 0 20%;
+}
+.mat-column-discountPercentage{
+  flex: 0 0 20%;
 }
