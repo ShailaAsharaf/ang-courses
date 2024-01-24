@@ -138,3 +138,31 @@ export class courses {
 export interface dialogData {
   mode: string
 }
+export class Upload {
+  $key!: string;
+  file: File;
+  name!: string;
+  url!: string;
+  type!: string;
+  size!: number;
+  progress!: number;
+  createdAt: Date = new Date();
+
+  constructor(file: File) {
+    this.file = file;
+  }
+}
+export class profileModel {
+  id!: string;
+  displayName!: string;
+  firstName!: string;
+  lastName!: string;
+  about!: string;
+  interest!: string;
+  professional!: string;
+  experience!: string;
+  expertise!: string;
+  role!: string;
+  url!: string;
+  type: string | undefined;
+}

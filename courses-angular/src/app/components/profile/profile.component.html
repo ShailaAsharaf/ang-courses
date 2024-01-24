@@ -1,1 +1,88 @@
-<p>profile works!</p>
+<div class="container">
+  <mat-card class="profile">
+    <mat-card-content>
+
+      <form [formGroup]="profileForm" *ngIf="profileForm" autocomplete="off" (ngSubmit)="onSUbmit()">
+        <div class="row">
+          <div class="col-4 image">
+            <img class="pic" mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Image of a Shiba Inu">
+          </div>
+          <div class="col-8">
+          <!-- displayName -->
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Display Name</mat-label>
+            <input matInput formControlName="displayName" type="text" placeholder="eg: John Doe" />
+            <mat-error *ngIf="displayName?.touched && displayName?.errors?.required">
+              displayName name is required
+            </mat-error>
+          </mat-form-field>
+          <!-- firstnmae -->
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Fisrt Name</mat-label>
+            <input matInput formControlName="firstName" type="text" placeholder="eg: John" />
+          </mat-form-field>
+          <!-- lastname -->
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" type="text" placeholder="eg: Doe" />
+          </mat-form-field>
+          </div>
+        </div>
+        <!-- about -->
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>About yourself</mat-label>
+          <textarea matInput placeholder="About yourself" formControlName="about" rows="2">
+        </textarea>
+        </mat-form-field>
+        <!-- interest -->
+        <mat-form-field class="half-width-1" appearance="fill">
+          <mat-label>Your area of Interest</mat-label>
+          <mat-select formControlName="interest">
+            <mat-option value="webDevelopment">Web Development</mat-option>
+            <mat-option value="mobileAppDevelopment">Mobile App Development</mat-option>
+            <mat-option value="dataScience">Data Science</mat-option>
+            <mat-option value="machineLearning">Machine Learning</mat-option>
+            <mat-option value="uiDesigning">UI/UX Design</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- Student/Professional -->
+        <mat-form-field class="half-width-2" appearance="fill">
+          <mat-label>Are you a student or a professional?
+          </mat-label>
+          <mat-select formControlName="professional">
+            <mat-option value="student">Student</mat-option>
+            <mat-option value="professional">Professional</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- experience -->
+        <mat-form-field class="full-width" appearance="fill" *ngIf="profileForm.get('professional')?.value==='professional' ">
+          <mat-label>Experience
+          </mat-label>
+          <mat-select formControlName="experience">
+            <mat-option value="first">0-5</mat-option>
+            <mat-option value="second">5-10</mat-option>
+            <mat-option value="third">10 & above</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- expertise -->
+        <mat-form-field class="full-width" appearance="fill" *ngIf="profileForm.get('professional')?.value==='professional' ">
+          <mat-label>Expertise
+          </mat-label>
+          <mat-select formControlName="expertise">
+            <mat-option value="backend">Backend</mat-option>
+            <mat-option value="frontend">Frontend</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- role -->
+        <mat-form-field class="full-width" appearance="fill" *ngIf="profileForm.get('professional')?.value==='professional' ">
+          <mat-label>Mention your role</mat-label>
+          <textarea matInput placeholder="Mention your role" formControlName="role" rows="4">
+        </textarea>
+        </mat-form-field>
+      </form>
+
+
+    </mat-card-content>
+  </mat-card>
+</div>

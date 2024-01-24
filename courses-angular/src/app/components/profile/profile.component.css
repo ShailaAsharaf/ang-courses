@@ -1,0 +1,23 @@
+.profile{
+  margin-top: 5%;
+  width: 60%;
+  margin-left: 20%;
+  padding: 36px;
+  margin-bottom: 5%;
+}
+.full-width{
+  width: 100%;
+}
+.half-width-1{
+  width: 49%;
+  margin-right: 2%;
+}
+.half-width-2{
+  width: 49%;
+}
+.image{
+  padding-top: 20px;
+}
+.pic{
+  border-radius: 50%;
+}
