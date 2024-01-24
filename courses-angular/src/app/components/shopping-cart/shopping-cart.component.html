@@ -1,1 +1,47 @@
-<p>shopping-cart works!</p>
+<div class="cards">
+  <div class="row">
+    <div class="col-8">
+      <mat-card *ngFor="let item of dataService.cartItems" class="card-container">
+        <mat-card-content>
+          <div class="d-flex">
+            <div class="flex-grow-1">
+              {{item.courseName}}
+            </div>
+            <div>
+              <button mat-icon-button (click)="addToWishList(item)" title="Add to WishList">
+                <mat-icon color="primary">playlist_add</mat-icon>
+              </button>
+              <button mat-icon-button (click)="removeFromCart(item)" title="Remove from Cart">
+                <mat-icon color="warn">delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-4">
+      <mat-card>
+        <mat-card-title>Your Cart</mat-card-title>
+        <mat-card-content *ngIf="dataService.cartItems.length == 0">
+          No items aded to the Cart!
+        </mat-card-content>
+        <mat-card-content *ngIf="dataService.cartItems.length > 0">
+          <br>
+          <p *ngIf="dataService.cartItems.length == 1">You have {{dataService.cartItems.length}} item in your cart</p>
+          <p *ngIf="dataService.cartItems.length >1">You have {{dataService.cartItems.length}} items in your cart</p>
+          <br>
+          <div class="total">
+            SubTotal: <s>&#8377;{{totalAmount}}</s>&nbsp; &#8377;{{discountedAmount}}
+            <br><br>
+            Saved Amount: &#8377;{{savedAmount}}
+            <br>
+          </div>
+          <button mat-raised-button color="primary" class="full-width">
+            Checkout
+            <mat-icon>logout</mat-icon>
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

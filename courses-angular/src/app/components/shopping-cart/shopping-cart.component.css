@@ -1,0 +1,13 @@
+.cards{
+  padding: 5%;
+}
+.card-container{
+  margin-bottom: 12px;
+}
+.total{
+  font-size: 20px;
+  padding: 16px 0;
+}
+.full-width{
+  width: 100%;
+}
