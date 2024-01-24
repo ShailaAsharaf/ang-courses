@@ -1,4 +1,5 @@
 export class courses {
+[x: string]: any;
   public static ConstValue = [
     {
       courseName: 'Advanced Machine Learning',

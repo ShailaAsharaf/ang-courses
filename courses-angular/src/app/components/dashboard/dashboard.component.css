@@ -5,13 +5,13 @@
   height: 300px;
   width: 100%;
   position: relative;
-  span{
-    position: absolute;
-    top: 130px;
-    right: 20%;
-    color: white;
-    font-size: 40px;
-  }
+}
+.banner span{
+  position: absolute;
+  top: 130px;
+  right: 20%;
+  color: white;
+  font-size: 40px;
 }
 .customMarginTitle{
   margin: 32px 0 12px 0
