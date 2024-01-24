@@ -2,12 +2,19 @@
   Course successfully added in the Cart
 </mat-dialog-content>
 <mat-dialog-actions align="end" *ngIf="data.mode ==='addedToCart' ">
-  <button mat-button (click)="close()">Close</button>
+  <button mat-button (click)="close()">OK</button>
 </mat-dialog-actions>
 
 <mat-dialog-content *ngIf="data.mode ==='addedToWishList' ">
   Course successfully added to the WishList
 </mat-dialog-content>
 <mat-dialog-actions align="end" *ngIf="data.mode ==='addedToWishList' ">
-  <button mat-button (click)="close()">Close</button>
+  <button mat-button (click)="close()">OK</button>
+</mat-dialog-actions>
+
+<mat-dialog-content *ngIf="data.mode ==='profileUpdated' ">
+  Your Profile is Updated!
+</mat-dialog-content>
+<mat-dialog-actions align="end" *ngIf="data.mode ==='profileUpdated' ">
+  <button mat-button (click)="close()">OK</button>
 </mat-dialog-actions>

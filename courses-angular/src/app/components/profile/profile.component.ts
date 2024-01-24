@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { profileModel } from 'src/app/data-model';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-profile',
@@ -8,6 +10,8 @@ import { profileModel } from 'src/app/data-model';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  @ViewChild('file')
+  file!: { nativeElement: { value: string; }; };
   profileForm!: FormGroup;
   profileData: profileModel = {
     id: '',
@@ -23,8 +27,10 @@ export class ProfileComponent implements OnInit {
     url: '',
     type: '',
   }
+  imageUrl = 'assets/profile.jpeg';
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +39,7 @@ export class ProfileComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(2),
-          Validators.maxLength(60),
+          Validators.maxLength(100),
         ]
       ],
       firstName: [this.profileData.firstName,
@@ -53,9 +59,36 @@ export class ProfileComponent implements OnInit {
     })
   }
   onSUbmit(){
-
+    this.dialog.open(PopupComponent, {
+      width: '300px',
+      data: {
+        mode: 'profileUpdated',
+      },
+    });
+  }
+  // since we are using button for upload file and hiding input type="file" we need this code to do the actions in background
+  addFile() {
+    let element: HTMLElement = document.getElementsByName(
+      'attachmentFiles'
+    )[0] as HTMLElement;
+    this.file.nativeElement.value = '';
+    element.click();
+  }
+  upload(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      this.imageUrl = URL.createObjectURL(event.target.files[0]);
+    }
   }
   get displayName() {
     return this.profileForm.get('displayName');
+  }
+  get firstName() {
+    return this.profileForm.get('firstName');
+  }
+  get about() {
+    return this.profileForm.get('about');
+  }
+  get role() {
+    return this.profileForm.get('role');
   }
 }
