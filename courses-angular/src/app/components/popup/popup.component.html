@@ -18,3 +18,14 @@
 <mat-dialog-actions align="end" *ngIf="data.mode ==='profileUpdated' ">
   <button mat-button (click)="close()">OK</button>
 </mat-dialog-actions>
+
+<mat-dialog-content *ngIf="data.mode ==='checkOut' ">
+  <p>Ordered successfully!!</p>
+  <p>Ordered {{data.noOfItems}} items successfully!!</p>
+  <br>
+  Order Total: &#8377;{{data.price}}
+</mat-dialog-content>
+<mat-dialog-actions align="end" *ngIf="data.mode ==='checkOut' ">
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-button mat-dialog-close="ok">OK</button>
+</mat-dialog-actions>

@@ -41,9 +41,23 @@ export class ShoppingCartComponent implements OnInit {
     this.dataService.cartItems.splice(findIndex , 1);
     this.totalPrice();
   }
-
+  checkOut(){
+    const daialogRef = this.dialog.open(PopupComponent, {
+      width: '300px',
+      data: {
+        mode: 'checkOut',
+        noOfItems: this.dataService.cartItems.length,
+        price: this.discountedAmount
+      },
+    });
+    daialogRef.afterClosed().subscribe((resp: any)=>{
+      if(resp){
+        console.log('ok');
+        this.dataService.cartItems.length = 0;
+      }
+    })
+  }
   totalPrice(){
-    var result = [];
     var sum = 0;
     var costsum = 0;
     this.dataService.cartItems.map(function(item){
