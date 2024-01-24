@@ -11,7 +11,18 @@
       <input matInput (keyup)="applyFilter($event)" placeholder="Search by Course title, author or tags" #input>
     </mat-form-field>
 
-    <mat-table [dataSource]="angularCourses">
+    <a [routerLink]="" [matMenuTriggerFor]="menu">Sort By Price</a>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="lowToHigh()">
+        Low to High
+      </button>
+      <button mat-menu-item (click)="highToLow()">
+        High to Low
+      </button>
+    </mat-menu>
+
+
+    <mat-table [dataSource]="angularCourses" matSort>
       <ng-container matColumnDef="star">
         <mat-header-cell mat-header-cell *matHeaderCellDef> </mat-header-cell>
         <mat-cell mat-cell *matCellDef="let element">
@@ -29,7 +40,7 @@
             <div class="customMarginLine1">Author: {{element.author}}</div>
             <div class="customMarginLine2">{{element.tags}}</div>
             <div class="customMarginButtons">
-              <a [routerLink]="" (click)="addToWishList(element)">Add to WishList</a>
+              <a [routerLink]="" (click)="addToWishList(element)" [ngClass]="{ isDisabled: checkElement(element) }">Add to WishList</a>
               &nbsp;
               &nbsp;
               &nbsp;

@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +15,8 @@ import { PopupComponent } from '../popup/popup.component';
 export class DashboardComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
+  @ViewChild(MatSort)
+  sort!: MatSort;
 
   angularCourses = new MatTableDataSource<courses>(courses.ConstValue);
   displayedColumns: string[] = [
@@ -32,6 +35,27 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {}
   ngAfterViewInit() {
     this.angularCourses.paginator = this.paginator;
+    this.angularCourses.sort = this.sort;
+  }
+  highToLow(){
+    const data: any = this.angularCourses.data;
+    data.sort((a: any, b: any) =>{
+      let price1 = this.getPrice(a.actualPrice, a.discountPercentage);
+      let price2 = this.getPrice(b.actualPrice, b.discountPercentage);
+      let price = +price2 - +price1
+      return price;
+    })
+    this.angularCourses.data = data
+  }
+  lowToHigh(){
+    const data: any = this.angularCourses.data;
+    data.sort((a: any, b: any) =>{
+      let price1 = this.getPrice(a.actualPrice, a.discountPercentage);
+      let price2 = this.getPrice(b.actualPrice, b.discountPercentage);
+      let price = +price1 - +price2
+      return price;
+    })
+    this.angularCourses.data = data
   }
   addToWishList(item: courses) {
     const daialogRef = this.dialog.open(PopupComponent, {
@@ -59,6 +83,7 @@ export class DashboardComponent implements OnInit {
       })
     }
   }
+
   getPrice(price: string, discount: string) {
     let finalPrice = price.substring(1);
     let finalDis = discount.substring(0, discount.length - 1);
