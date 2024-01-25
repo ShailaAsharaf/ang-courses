@@ -10,3 +10,33 @@
   color: white;
   font-size: 40px;
 }
+/* video-iframe-thumbnail.component.css */
+.video-thumbnail {
+  position: relative;
+  cursor: pointer;
+}
+.centr{
+  text-align: center;
+  font-size: 36px;
+  padding: 20px 0;
+}
+.thumbnail-image {
+  width: 100%;
+  height: auto;
+}
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+  text-decoration: none;
+}
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: white;
+}
+

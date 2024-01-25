@@ -11,5 +11,99 @@
         <li class="breadcrumb-item active" aria-current="page">{{course.courseName}}</li>
       </ol>
     </nav>
+    <br>
+    <br>
+    <!-- advanced machine learning -->
+    <div class="row" *ngIf="courseId==='advancedmachinelearning'">
+      <div class="col-8">
+        <div *ngIf="courseId==='advancedmachinelearning'">
+          <p>
+            "Advanced machine learning" typically refers to the application of sophisticated and complex machine
+            learning techniques to solve intricate and challenging problems. It goes beyond basic machine learning
+            approaches and involves the use of advanced algorithms, models, and methodologies to address more complex
+            tasks or datasets.
+          </p>
+          <p>
+            Key aspects of advanced machine learning include:
+
+          </p>
+          <p>
+            <b>Complex Models</b>: The use of more sophisticated machine learning models such as deep learning models
+            (e.g., neural networks with multiple layers), ensemble methods, and other advanced algorithms that can
+            capture intricate patterns in data.
+
+          </p>
+          <p>
+            <b>Feature Engineering</b>: Advanced machine learning often involves in-depth feature engineering, where
+            domain knowledge is leveraged to create meaningful and relevant input features for the models. This is
+            crucial for improving model performance.
+
+          </p>
+          <p>
+            <b>Big Data</b>: Handling large and complex datasets, often referred to as big data, is a common
+            characteristic of advanced machine learning. This may involve distributed computing, parallel processing,
+            and scalable algorithms to analyze and learn from massive amounts of data.
+
+          </p>
+          <p>
+            <b>Transfer Learning</b>: Leveraging knowledge gained from one task to improve performance on a related but
+            different task is known as transfer learning. This is a common technique in advanced machine learning,
+            particularly in scenarios where labeled data may be limited.
+
+          </p>
+          <p>
+            <b>Reinforcement Learning</b>: In some cases, advanced machine learning involves the application of
+            reinforcement learning, where an agent learns to make decisions by interacting with an environment and
+            receiving feedback in the form of rewards or punishments.
+
+          </p>
+          <p>
+            <b>Explainability and Interpretability</b>: As models become more complex, understanding their decisions
+            becomes increasingly important. Advanced machine learning often involves efforts to make models more
+            interpretable and explainable, especially in applications where decisions impact individuals or society.
+
+          </p>
+          <p>
+            <b>Deployment and Scalability</b>: Integrating machine learning models into real-world applications often
+            requires addressing deployment challenges and ensuring scalability, reliability, and efficiency of the
+            implemented solutions.
+
+          </p>
+          <p>
+            Examples of advanced machine learning applications include natural language processing, image and speech
+            recognition, autonomous systems, healthcare analytics, fraud detection, and more.
+
+          </p>
+          <p>
+            In summary, advanced machine learning encompasses a broad range of techniques and methodologies that go
+            beyond the basics to tackle complex problems and datasets.
+
+          </p>
+        </div>
+      </div>
+      <div class="col-4">
+        <mat-card>
+          <!-- video-iframe-thumbnail.component.html -->
+          <div *ngIf="!isVideoPlaying" class="video-thumbnail" (click)="playVideo()">
+            <img src="assets/advmachlng.jpeg" alt="Video Thumbnail" class="thumbnail-image">
+            <div class="play-button">&#9654;</div>
+          </div>
+          <iframe height="250" *ngIf="isVideoPlaying" src="https://www.youtube.com/embed/ESdiTwvptxo?si=D-JYQw8eHXAmHKhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="centr">
+            <s>{{course.actualPrice}}</s>&nbsp;&#8377;{{getPrice(course.actualPrice, course.discountPercentage)}}
+          </div>
+          <mat-card-actions>
+            &nbsp;
+            &nbsp;
+            <a [routerLink]="" (click)="addToWishList(course)" [ngClass]="{ isDisabled: checkElement(course) }">Add to WishList</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <a [routerLink]="" (click)="addToCart(course)">Add to Cart</a>
+          </mat-card-actions>
+
+        </mat-card>
+      </div>
+    </div>
   </div>
 </div>>
