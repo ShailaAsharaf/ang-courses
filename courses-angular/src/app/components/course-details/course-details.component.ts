@@ -4,6 +4,7 @@ import { courses } from 'src/app/data-model';
 import { DataServiceService } from '../data-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-course-details',
@@ -22,7 +23,8 @@ export class CourseDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public dataServices: DataServiceService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -48,7 +50,10 @@ export class CourseDetailsComponent implements OnInit {
     });
 
   }
-
+  // Sanitize the video URL
+  get sanitizedVideoUrl(): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.course.videoUrl);
+  }
   playVideo() {
     this.isVideoPlaying = !this.isVideoPlaying;
   }

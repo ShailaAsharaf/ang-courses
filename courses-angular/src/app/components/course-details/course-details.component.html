@@ -85,10 +85,10 @@
         <mat-card *ngIf="loaded">
           <!-- video-iframe-thumbnail.component.html -->
           <div *ngIf="!isVideoPlaying" class="video-thumbnail" (click)="playVideo()">
-            <img src="assets/advmachlng.jpeg" alt="Video Thumbnail" class="thumbnail-image">
+            <img [src]="course.imageUrl" alt="Video Thumbnail" class="thumbnail-image">
             <div class="play-button">&#9654;</div>
           </div>
-          <iframe height="250" *ngIf="isVideoPlaying" src="https://www.youtube.com/embed/ESdiTwvptxo?si=D-JYQw8eHXAmHKhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe height="250" class="frameClass" *ngIf="isVideoPlaying" [src]="sanitizedVideoUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           <div class="centr">
             <s>{{course.actualPrice}}</s>&nbsp;&#8377;{{getPrice(course.actualPrice, course.discountPercentage)}}
           </div>
