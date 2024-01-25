@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,8 +8,17 @@ import { Injectable } from '@angular/core';
 export class AuthServiceService {
 
   private isAuthenticate = false;
+  private dataSubject = new BehaviorSubject<string>('Initial Value');
+  data$ = this.dataSubject.asObservable();
 
-  constructor() { }
+
+  constructor(
+    private router: Router
+  ) { }
+
+  updateData(newValue: string): void {
+    this.dataSubject.next(newValue);
+  }
 
   login(username: string, password: string): boolean {
     // Perform authentication and obtain a token from the server
@@ -23,6 +34,8 @@ export class AuthServiceService {
   logout(): void {
     // Clear the stored token and set isAuthenticated to false
     this.isAuthenticate = false;
+    this.updateData('loggedOut');
+    this.router.navigate([''])
   }
 
   isAuthenticated(): boolean {

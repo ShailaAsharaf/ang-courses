@@ -14,11 +14,22 @@
       <mat-icon [matBadgeHidden] = "dataService.cartItems.length == 0" [matBadge]="dataService.cartItems.length" matBadgeColor="warn">shopping_cart</mat-icon>
     </button>
     </span>
-    <span class="navIcons" (click)="goToPage('profilePage')">
-      <button mat-icon-button title="My Profile Page">
+    <span class="navIcons" [matMenuTriggerFor]="menuProfile" >
+      <button mat-icon-button title="My Account">
         <mat-icon>account_circle</mat-icon>
       </button>
     </span>
+    <mat-menu #menuProfile="matMenu">
+      <button *ngIf="!isLoggedIn" mat-menu-item (click)="goToPage('login')">
+        Login
+      </button>
+      <button *ngIf="isLoggedIn" mat-menu-item (click)="goToPage('profilePage')">
+        My Profile Page
+      </button>
+      <button *ngIf="isLoggedIn" mat-menu-item (click)="logout()">
+        Logout
+      </button>
+    </mat-menu>
   </mat-toolbar>
   <div class="ovrflow">
     <router-outlet></router-outlet>

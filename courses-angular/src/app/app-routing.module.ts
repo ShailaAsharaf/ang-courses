@@ -7,6 +7,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -27,11 +28,13 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'shopping-cart',
-        component: ShoppingCartComponent
+        component: ShoppingCartComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: 'wishlist',

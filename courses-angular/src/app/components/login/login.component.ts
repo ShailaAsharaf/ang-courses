@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
   }
   login(): void {
     if (this.authService.login(this.loginForm.value.email, this.loginForm.value.password)) {
+      this.authService.updateData('isLoggedIn');
       this.router.navigate(['dash/profile'])
     } else {
       // Handle unsuccessful login
