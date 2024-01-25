@@ -14,6 +14,10 @@ export class CourseDetailsComponent implements OnInit {
   courseId: string|null = '';
   course!: courses;
   isVideoPlaying = false;
+  displayHours = false;
+  loaded = false;
+  hours = 0;
+  minutes = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,7 +31,19 @@ export class CourseDetailsComponent implements OnInit {
       let cName = a.courseName.replace(/\s/g, "").toLowerCase();
       if(cName == this.courseId){
         this.course = a;
-        console.log(a)
+
+        const currentTime = new Date();
+        const timeDiff = this.course.saleEndTime.getTime() - currentTime.getTime();
+
+        this.hours = Math.floor(timeDiff / (1000 * 60 * 60));
+        this.minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        if(this.hours>24){
+          this.displayHours = false;
+        }else{
+          this.displayHours = true;
+        }
+        console.log(this.displayHours);
+        this.loaded = true;
       }
     });
 

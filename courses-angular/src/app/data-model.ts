@@ -7,6 +7,7 @@ export class courses {
       actualPrice: '₹1199',
       discountPercentage: '15%',
       tags: ['Machine Learning', 'Python'],
+      saleEndTime: new Date('2024-01-25T18:00:00')
     },
     {
       courseName: 'JavaScript Frameworks Masterclass',
@@ -14,6 +15,7 @@ export class courses {
       actualPrice: '₹899',
       discountPercentage: '20%',
       tags: ['JavaScript', 'React', 'Vue'],
+      saleEndTime: new Date('2024-01-26T18:00:00')
     },
     {
       courseName: 'Full Stack Development with Django',
@@ -21,6 +23,7 @@ export class courses {
       actualPrice: '₹1499',
       discountPercentage: '10%',
       tags: ['Python', 'Django', 'JavaScript'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Cybersecurity Essentials',
@@ -28,6 +31,7 @@ export class courses {
       actualPrice: '₹1299',
       discountPercentage: '25%',
       tags: ['Cybersecurity', 'Network Security'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Mobile App UX Design',
@@ -35,6 +39,7 @@ export class courses {
       actualPrice: '₹999',
       discountPercentage: '18%',
       tags: ['UX Design', 'Mobile App Development'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Node.js for Beginners',
@@ -42,6 +47,7 @@ export class courses {
       actualPrice: '₹699',
       discountPercentage: '22%',
       tags: ['Node.js', 'JavaScript'],
+      saleEndTime: new Date('2024-01-29T18:00:00')
     },
     {
       courseName: 'Artificial Intelligence in Business',
@@ -49,6 +55,7 @@ export class courses {
       actualPrice: '₹1599',
       discountPercentage: '12%',
       tags: ['Artificial Intelligence', 'Business'],
+      saleEndTime: new Date('2024-01-27T18:00:00')
     },
     {
       courseName: 'Swift Programming for iOS',
@@ -56,6 +63,7 @@ export class courses {
       actualPrice: '₹1099',
       discountPercentage: '17%',
       tags: ['iOS', 'Swift'],
+      saleEndTime: new Date('2024-01-26T18:00:00')
     },
     {
       courseName: 'Responsive Web Design Principles',
@@ -63,6 +71,7 @@ export class courses {
       actualPrice: '₹799',
       discountPercentage: '21%',
       tags: ['Web Design', 'HTML', 'CSS'],
+      saleEndTime: new Date('2024-01-27T18:00:00')
     },
     {
       courseName: 'Java Fundamentals',
@@ -70,6 +79,7 @@ export class courses {
       actualPrice: '₹899',
       discountPercentage: '0',
       tags: ['Java'],
+      saleEndTime: new Date('2024-01-26T18:00:00')
     },
     {
       courseName: 'Game Development with Unity',
@@ -77,6 +87,7 @@ export class courses {
       actualPrice: '₹1399',
       discountPercentage: '14%',
       tags: ['Game Development', 'Unity'],
+      saleEndTime: new Date('2024-01-29T18:00:00')
     },
     {
       courseName: 'Python for Data Science',
@@ -84,6 +95,7 @@ export class courses {
       actualPrice: '₹1199',
       discountPercentage: '0',
       tags: ['Python', 'Data Science'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Frontend Development Bootcamp',
@@ -91,6 +103,7 @@ export class courses {
       actualPrice: '₹999',
       discountPercentage: '18%',
       tags: ['HTML', 'CSS', 'JavaScript'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'C# Programming Mastery',
@@ -98,6 +111,7 @@ export class courses {
       actualPrice: '₹1099',
       discountPercentage: '0',
       tags: ['C#'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Angular Framework Deep Dive',
@@ -105,6 +119,7 @@ export class courses {
       actualPrice: '₹1299',
       discountPercentage: '15%',
       tags: ['Angular'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Data Visualization with D3.js',
@@ -112,6 +127,7 @@ export class courses {
       actualPrice: '₹899',
       discountPercentage: '0',
       tags: ['Data Visualization', 'D3.js'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Android App Development Basics',
@@ -119,6 +135,7 @@ export class courses {
       actualPrice: '₹799',
       discountPercentage: '0',
       tags: ['Android', 'Mobile App Development'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Vue.js for Frontend Development',
@@ -126,6 +143,7 @@ export class courses {
       actualPrice: '₹999',
       discountPercentage: '18%',
       tags: ['Vue.js', 'JavaScript'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
     {
       courseName: 'Cloud Computing Fundamentals',
@@ -133,6 +151,7 @@ export class courses {
       actualPrice: '₹1199',
       discountPercentage: '16%',
       tags: ['Cloud Computing'],
+      saleEndTime: new Date('2024-01-28T18:00:00')
     },
   ];
 }

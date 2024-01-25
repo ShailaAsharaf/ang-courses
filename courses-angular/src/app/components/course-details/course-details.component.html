@@ -14,7 +14,7 @@
     <br>
     <br>
     <!-- advanced machine learning -->
-    <div class="row" *ngIf="courseId==='advancedmachinelearning'">
+    <div class="row">
       <div class="col-8">
         <div *ngIf="courseId==='advancedmachinelearning'">
           <p>
@@ -82,7 +82,7 @@
         </div>
       </div>
       <div class="col-4">
-        <mat-card>
+        <mat-card *ngIf="loaded">
           <!-- video-iframe-thumbnail.component.html -->
           <div *ngIf="!isVideoPlaying" class="video-thumbnail" (click)="playVideo()">
             <img src="assets/advmachlng.jpeg" alt="Video Thumbnail" class="thumbnail-image">
@@ -92,8 +92,8 @@
           <div class="centr">
             <s>{{course.actualPrice}}</s>&nbsp;&#8377;{{getPrice(course.actualPrice, course.discountPercentage)}}
           </div>
+          <p *ngIf="displayHours">Sale Ends In: {{ hours }} hours and {{minutes}} minutes </p>
           <mat-card-actions>
-            &nbsp;
             &nbsp;
             <a [routerLink]="" (click)="addToWishList(course)" [ngClass]="{ isDisabled: checkElement(course) }">Add to WishList</a>
             &nbsp;
