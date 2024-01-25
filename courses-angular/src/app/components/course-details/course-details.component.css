@@ -1,0 +1,12 @@
+.banner{
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+.banner span{
+  position: absolute;
+  top: 130px;
+  right: 20%;
+  color: white;
+  font-size: 40px;
+}

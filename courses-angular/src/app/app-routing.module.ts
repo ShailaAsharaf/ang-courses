@@ -37,7 +37,7 @@ const routes: Routes = [
         component: WishlistComponent
       },
       {
-        path: 'course-details',
+        path: 'course-details/:courseId',
         component: CourseDetailsComponent
       }
     ]

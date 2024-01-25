@@ -1,1 +1,15 @@
-<p>course-details works!</p>
+<div *ngIf="!!this.course">
+  <div class="banner" [ngStyle]="{background: 'url(assets/vector.PNG)'}">
+    <span>Discover Latest Courses on Angular</span>
+  </div>
+  <div class="container">
+    <br>
+    <br>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/dash/home">All Courses</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{course.courseName}}</li>
+      </ol>
+    </nav>
+  </div>
+</div>>

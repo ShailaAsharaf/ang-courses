@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from '../popup/popup.component';
 import { MatSort } from '@angular/material/sort';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,7 +30,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private dataServices: DataServiceService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
     ) {}
 
   ngOnInit(): void {}
@@ -100,5 +102,9 @@ export class DashboardComponent implements OnInit {
   checkElement(element: courses){
     if (this.dataServices.wishItems.indexOf(element) !== -1){ return true;}
     else{ return false; }
+  }
+  gotoCourseDetails(courseName: string){
+    let cName = courseName.replace(/\s/g, "").toLowerCase()
+    this.router.navigate(['dash/course-details/', cName])
   }
 }
