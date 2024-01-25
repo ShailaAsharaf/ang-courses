@@ -6,6 +6,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path: 'course-details/:courseId',
         component: CourseDetailsComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
       }
     ]
   }

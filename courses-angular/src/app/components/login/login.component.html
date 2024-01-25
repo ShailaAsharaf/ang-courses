@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="login">
+  <mat-card>
+    <h2 style="color: #1565C0;">Sign in with email</h2>
+    <!-- login form starts here -->
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field class="fullWidth">
+        <input matInput placeholder="Email address" formControlName="email" />
+        <mat-error *ngIf="email?.errors?.required">Email is required</mat-error>
+        <mat-error *ngIf="email?.errors?.email">Provide a valid email address</mat-error>
+      </mat-form-field>
+      <mat-form-field class="fullWidth">
+        <input matInput placeholder="Password" formControlName="password" type="password" />
+        <mat-error *ngIf="password?.errors?.required">Password is required</mat-error>
+        <mat-error *ngIf="password?.errors?.minLength">Minimum six characters required</mat-error>
+      </mat-form-field>
+      <br>
+      <div class="d-flex justify-content-between">
+        <div style="padding-top: 8px">
+          <a href="javascript:void(0)">Trouble Signing in?</a>
+        </div>
+        <div>
+          <button mat-raised-button color="primary" type="submit"
+            [disabled]="!loginForm.valid">Login</button>
+        </div>
+      </div>
+      <br>
+    </form>
+    <!-- login form ends gere -->
+  </mat-card>
+</div>
