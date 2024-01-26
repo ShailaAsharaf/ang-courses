@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
     'discountPercentage',
     'actions',
   ];
+  lastPrice = '';
 
   constructor(
     private dataServices: DataServiceService,
@@ -92,8 +93,12 @@ export class DashboardComponent implements OnInit {
     let discountPercentage: number = +finalDis;
     let discountedPrice = actualPrice * (1 - discountPercentage / 100);
     let lastPrice = (Math.round(discountedPrice * 100) / 100).toFixed(2);
-    let symbol = Array.from(price)[0];
-    return `${symbol}${lastPrice}`;
+    this.lastPrice = Array.from(price)[0];
+    return lastPrice;
+  }
+  getPriceString(price: string, discount: string){
+    let lastPrice = this.getPrice(price, discount);
+    return `${this.lastPrice}${lastPrice}`
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
