@@ -39,7 +39,7 @@ export class CourseDetailsComponent implements OnInit {
 
         this.hours = Math.floor(timeDiff / (1000 * 60 * 60));
         this.minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-        if(this.hours>24){
+        if((this.course.saleEndTime.getTime() > currentTime.getTime()) && (this.hours>24)){
           this.displayHours = false;
         }else{
           this.displayHours = true;
