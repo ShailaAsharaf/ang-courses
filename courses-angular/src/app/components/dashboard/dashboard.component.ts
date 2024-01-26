@@ -93,7 +93,8 @@ export class DashboardComponent implements OnInit {
     let discountPercentage: number = +finalDis;
     let discountedPrice = actualPrice * (1 - discountPercentage / 100);
     let lastPrice = (Math.round(discountedPrice * 100) / 100).toFixed(2);
-    return lastPrice;
+    let symbol = Array.from(price)[0];
+    return `${symbol}${lastPrice}`;
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

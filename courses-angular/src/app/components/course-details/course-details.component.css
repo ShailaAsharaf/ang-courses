@@ -51,3 +51,6 @@ pre{
   white-space: -o-pre-wrap;
   word-wrap: break-word;
 }
+.saleEnds{
+  font-size: 20px;
+}

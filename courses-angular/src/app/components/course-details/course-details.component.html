@@ -29,7 +29,6 @@
           <div class="centr">
             <s>{{course.actualPrice}}</s>&nbsp;&#8377;{{getPrice(course.actualPrice, course.discountPercentage)}}
           </div>
-          <p *ngIf="displayHours">Sale Ends In: {{ hours }} hours and {{minutes}} minutes </p>
           <mat-card-actions>
             &nbsp;
             <a [routerLink]="" (click)="addToWishList(course)" [ngClass]="{ isDisabled: checkElement(course) }">Add to WishList</a>
@@ -39,6 +38,11 @@
             <a [routerLink]="" (click)="addToCart(course)">Add to Cart</a>
           </mat-card-actions>
 
+        </mat-card>
+        <br>
+        <mat-card *ngIf="displayHours">
+            <mat-card-content class="saleEnds">Sale Ends In: {{ hours }} hours and {{minutes}} minutes
+            </mat-card-content>
         </mat-card>
       </div>
     </div>
