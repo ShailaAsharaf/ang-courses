@@ -36,15 +36,15 @@ export class CourseDetailsComponent implements OnInit {
 
         const currentTime = new Date();
         const timeDiff = this.course.saleEndTime.getTime() - currentTime.getTime();
-
         this.hours = Math.floor(timeDiff / (1000 * 60 * 60));
         this.minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-        if((this.course.saleEndTime.getTime() > currentTime.getTime()) && (this.hours>24)){
-          this.displayHours = false;
-        }else{
-          this.displayHours = true;
+        if(this.course.saleEndTime.getTime() > currentTime.getTime()){
+          if(this.hours>24){
+            this.displayHours = false;
+          }else{
+            this.displayHours = true;
+          }
         }
-        console.log(this.displayHours);
         this.loaded = true;
       }
     });
