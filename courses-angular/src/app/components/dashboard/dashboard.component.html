@@ -50,18 +50,12 @@
         </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="actualPrice">
-        <mat-header-cell mat-header-cell *matHeaderCellDef> </mat-header-cell>
-        <mat-cell mat-cell *matCellDef="let element">
-          <h1><s>{{element.discountPercentage ? element.actualPrice : ''}}</s></h1>
-        </mat-cell>
-      </ng-container>
-
       <ng-container matColumnDef="discountPercentage">
         <mat-header-cell mat-header-cell *matHeaderCellDef> </mat-header-cell>
         <mat-cell mat-cell *matCellDef="let element">
+          <h1><s>{{element.discountPercentage ? element.actualPrice : ''}}</s>&nbsp;</h1>
           <h1>{{element.discountPercentage ? getPrice(element.actualPrice, element.discountPercentage) : element.actualPrice}}&nbsp;</h1>
-          <h2 class="discountClass">{{element.discountPercentage}} off</h2>
+          <h2 *ngIf="element.discountPercentage" class="discountClass">{{element.discountPercentage}} off</h2>
         </mat-cell>
       </ng-container>
 

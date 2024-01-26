@@ -23,7 +23,6 @@ export class DashboardComponent implements OnInit {
   displayedColumns: string[] = [
     'star',
     'courseName',
-    'actualPrice',
     'discountPercentage',
     'actions',
   ];
